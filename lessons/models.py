@@ -13,3 +13,12 @@ class Lesson(models.Model):
     class Meta:
         verbose_name = 'Продолжительность'
         verbose_name_plural = 'Продолжительности'
+
+class UserLesson(models.Model):
+    owner = models.ForeignKey('users.User', on_delete=models.CASCADE, verbose_name='Владелец')
+    lesson = models.ForeignKey('lessons.Lesson', on_delete=models.CASCADE, verbose_name='Урок')
+    watched_time = models.DurationField(verbose_name='Просмотренно времени')
+
+    class Meta:
+        verbose_name = 'Урок пользователя'
+        verbose_name_plural = 'Урок пользователя'

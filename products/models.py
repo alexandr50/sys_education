@@ -12,3 +12,12 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Продукт'
         verbose_name_plural = 'Продукты'
+
+
+class UserProduct(models.Model):
+    owner = models.ForeignKey('users.User', on_delete=models.CASCADE, verbose_name='Владелец')
+    product = models.ForeignKey('products.Product', on_delete=models.CASCADE, verbose_name='Продукт')
+
+    class Meta:
+        verbose_name = 'Продукт пользователя'
+        verbose_name_plural = 'Продукты пользователя'
