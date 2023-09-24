@@ -24,4 +24,5 @@ router = DefaultRouter()
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include(('users.urls', 'users'), namespace='users')),
+    path('products/', include(('products.urls', 'products'), namespace='products')),
 ]
