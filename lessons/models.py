@@ -3,7 +3,7 @@ from django.db import models
 
 class Lesson(models.Model):
     name = models.CharField(max_length=30, verbose_name='Название')
-    product = models.ManyToManyField('products.Product', blank=True, verbose_name='Продукт')
+    product = models.ForeignKey('products.Product', on_delete=models.CASCADE, blank=True, verbose_name='Урок', related_name='lesson')
     link = models.URLField(verbose_name='Ссылка')
     duration = models.DurationField(default=None, verbose_name='Продолжительнось')
 

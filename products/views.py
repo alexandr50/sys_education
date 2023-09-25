@@ -2,12 +2,12 @@
 from rest_framework import generics
 
 from products.models import Product
-from products.serializers import ProductSerializer, StatisticSerializer
+from products.serializers import ProductSerializer, StatisticSerializer, LessonSerializer
 
 
 class ProductListAPIView(generics.ListAPIView):
 
-    serializer_class = ProductSerializer
+    serializer_class = LessonSerializer
     queryset = Product.objects.all()
 
     def get_queryset(self):
