@@ -11,8 +11,8 @@ class Lesson(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = 'Продолжительность'
-        verbose_name_plural = 'Продолжительности'
+        verbose_name = 'Урок'
+        verbose_name_plural = 'Уроки'
 
 
 class UserLesson(models.Model):
@@ -26,6 +26,9 @@ class UserLesson(models.Model):
         if (self.watched_time / self.lesson.duration) > 0.8:
             return 'Просмотренно'
         return 'Не просмотренно'
+
+    def __str__(self):
+        return f'{self.owner} | {self.lesson}'
 
     class Meta:
         verbose_name = 'Урок пользователя'

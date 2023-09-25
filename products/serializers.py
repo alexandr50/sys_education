@@ -15,3 +15,9 @@ class ProductSerializer(serializers.ModelSerializer):
     def get_product_lessons(self, instance):
         request = self._context["request"]
         return Lesson.objects.filter(product=instance.id).exists()
+
+
+class ProductCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = '__all__'
