@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from lessons.models import Lesson, UserLesson
+from lessons.models import Lesson, UserLessonViewed
 
 admin.site.register(Lesson)
-admin.site.register(UserLesson)
+admin.site.register(UserLessonViewed)

@@ -15,7 +15,7 @@ class Lesson(models.Model):
         verbose_name_plural = 'Уроки'
 
 
-class UserLesson(models.Model):
+class UserLessonViewed(models.Model):
     owner = models.ForeignKey('users.User', on_delete=models.CASCADE, verbose_name='Владелец')
     lesson = models.ForeignKey('lessons.Lesson', on_delete=models.CASCADE, verbose_name='Урок')
     watched_time = models.DurationField(verbose_name='Просмотренно времени')
